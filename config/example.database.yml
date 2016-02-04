@@ -1,0 +1,25 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: testapp_development
+  pool: 5
+  username: username
+  password: password
+  host: localhost
+  port: 5432
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: testapp_test
+  pool: 5
+  username: foobar
+  password: foobar
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: testapp_production
+  pool: 5
+  username: foobar
+  password: foobar

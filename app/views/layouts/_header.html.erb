@@ -1,0 +1,12 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+	<div class="container-fluid">
+	  <%= link_to "Главная", root_path %> |
+	  <%= link_to "О проекте", main_about_path %> |
+	  <%= link_to "Личный кабинет", main_cabinet_path %>
+	  <% if user_signed_in? %>
+	  	<%= link_to "Выйти", destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn" %>
+	  <% else %>
+	  	<%= link_to "Войти", new_user_session_path, class: "btn btn-default navbar-btn" %>
+	  <% end %>
+	</div>
+</header>

@@ -1,0 +1,34 @@
+<% provide(:title, 'TestApp. Главная') %>
+<h1>Главная. Список пользователей. </h1>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= link_to 'Создать пользователя', new_users_admin_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<% @users.each do |user| %>
+  <p>
+    <strong>Имя:</strong>
+    <%= user.first_name %>
+  </p>
+  <p>
+    <strong>Фамилия:</strong>
+    <%= user.second_name %>
+  </p>
+  <p>
+    <strong>Телефон:</strong>
+    <%= user.phone %>
+    </p>
+  <p>
+    <strong>E-mail:</strong>
+    <%= user.email %>
+  </p>
+  <p>
+    <strong>Статус:</strong>
+    <i><%= user.is_active ? 'активный' : 'неактивный' %></i>
+  </p>
+  <%= link_to 'Изменить', edit_users_admin_path(user) %>
+  <%= link_to 'Удалить', users_admin_path(user), method: :delete, data: {confirm: "Точно удалить?"} %>
+  <hr>
+<% end %>
